@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OalqrtzJobsVO"
+  Version="11.1.1.67.75"
+  InheritPersonalization="merge"
+  SelectList="OalqrtzJobsEO.APPLICATION_ID, 
+       OalqrtzJobsEO.JOB_ID, 
+       OalqrtzJobsEO.JOB_NAME, 
+       OalqrtzJobsEO.DESCRIPTION, 
+       OalqrtzJobsEO.ENABLED, 
+       OalqrtzJobsEO.JOB_TYPE, 
+       OalqrtzJobsEO.JOB_EXECUTABLE, 
+       OalqrtzJobsEO.JOB_EXE_OPTIONS, 
+       OalqrtzJobsEO.CREATION_DATE, 
+       OalqrtzJobsEO.CREATED_BY, 
+       OalqrtzJobsEO.LAST_UPDATE_DATE, 
+       OalqrtzJobsEO.LAST_UPDATED_BY, 
+       OalqrtzJobsEO.LAST_UPDATE_LOGIN"
+  FromList="OALAPP.OALQRTZ_JOBS OalqrtzJobsEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <Variable
+    Name="pJobName"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobsVO.pJobName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="pJobExecutable"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobsVO.pJobExecutable_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="pDesc"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobsVO.pDesc_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <ViewAccessor
+    Name="OalfndLookupValuesVO1"
+    ViewObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalfndLookupValuesVO">
+    <ViewCriteriaUsage
+      Name="LookupNameCriteria"
+      FullName="oal.oracle.apps.fnd.qrtz.model.vo.OalfndLookupValuesVO.LookupNameCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pLookupName">
+        <TransientExpression><![CDATA['OALQRTZ_JOB_TYPES']]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="OalfndApplicationsVO1"
+    ViewObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalfndApplicationsVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="LookupValuesForYesNo"
+    ViewObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalfndLookupValuesVO">
+    <ViewCriteriaUsage
+      Name="LookupNameCriteria"
+      FullName="oal.oracle.apps.fnd.qrtz.model.vo.OalfndLookupValuesVO.LookupNameCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pLookupName">
+        <TransientExpression><![CDATA['OALQRTZ_YES_NO']]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="OalqrtzJobsForJobName"
+    ViewObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobsVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_JobType"
+    ListVOName="OalfndLookupValuesVO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobType"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Meaning"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ApplicationId"
+    ListVOName="OalfndApplicationsVO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ApplicationId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ApplicationId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ApplicationName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Enabled"
+    ListVOName="LookupValuesForYesNo"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Enabled"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Meaning"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_JobName"
+    ListVOName="OalqrtzJobsForJobName"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_JobName_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobName"/>
+    </AttrArray>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="JobId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="JobName"/>
+      <Item Value="JobId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="JobName"/>
+      <Item Value="Description"/>
+      <Item Value="JobExecutable"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="OalqrtzJobsEO"
+    Entity="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEO"/>
+  <ViewAttribute
+    Name="ApplicationId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ApplicationId"
+    EntityUsage="OalqrtzJobsEO"
+    AliasName="APPLICATION_ID"
+    LOVName="LOV_ApplicationId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="JobId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="JobId"
+    EntityUsage="OalqrtzJobsEO"
+    AliasName="JOB_ID"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="JobName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="JobName"
+    EntityUsage="OalqrtzJobsEO"
+    AliasName="JOB_NAME"
+    LOVName="LOV_JobName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="list"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="OalqrtzJobsEO"
+    AliasName="DESCRIPTION">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Enabled"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Enabled"
+    EntityUsage="OalqrtzJobsEO"
+    AliasName="ENABLED"
+    LOVName="LOV_Enabled">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="JobType"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="JobType"
+    EntityUsage="OalqrtzJobsEO"
+    AliasName="JOB_TYPE"
+    LOVName="LOV_JobType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="JobExecutable"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="JobExecutable"
+    EntityUsage="OalqrtzJobsEO"
+    AliasName="JOB_EXECUTABLE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="JobExeOptions"
+    PrecisionRule="true"
+    EntityAttrName="JobExeOptions"
+    EntityUsage="OalqrtzJobsEO"
+    AliasName="JOB_EXE_OPTIONS">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreationDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CreationDate"
+    EntityUsage="OalqrtzJobsEO"
+    AliasName="CREATION_DATE"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="OalqrtzJobsEO"
+    AliasName="CREATED_BY"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdateDate"
+    EntityUsage="OalqrtzJobsEO"
+    AliasName="LAST_UPDATE_DATE"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="OalqrtzJobsEO"
+    AliasName="LAST_UPDATED_BY"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="LastUpdateLogin"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdateLogin"
+    EntityUsage="OalqrtzJobsEO"
+    AliasName="LAST_UPDATE_LOGIN"
+    IsUpdateable="false"/>
+  <ViewCriteria
+    Name="JobsCriteria"
+    ViewObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobsVO"
+    Conjunction="AND"
+    Mode="3">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="Always"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="vcrow1"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="JobName"
+        ViewAttribute="JobName"
+        Operator="STARTSWITH"
+        Conjunction="AND"
+        Value=":pJobName"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Description"
+        ViewAttribute="Description"
+        Operator="STARTSWITH"
+        Conjunction="AND"
+        Value=":pDesc"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="JobExecutable"
+        ViewAttribute="JobExecutable"
+        Operator="STARTSWITH"
+        Conjunction="AND"
+        Value=":pJobExecutable"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewLinkAccessor
+    Name="OalqrtzJobAccessGrantsVO"
+    ViewLink="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobToJobAccessVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="OalqrtzJobParamsVO"
+    ViewLink="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobToJobParamsVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oal.oracle.apps.fnd.qrtz.model.OalQrtzModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

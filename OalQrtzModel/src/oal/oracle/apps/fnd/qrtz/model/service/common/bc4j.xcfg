@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="oal.oracle.apps.fnd.qrtz.model.service.QuartzAM">
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="oal.oracle.apps.fnd.qrtz.model.OalQrtzModel" name="QuartzAMLocal" ApplicationName="oal.oracle.apps.fnd.qrtz.model.service.QuartzAM">
+         <Security AppModuleJndiName="oal.oracle.apps.fnd.qrtz.model.service.QuartzAM"/>
+         <Custom JDBCDataSource="jdbc/OalappRuntimeFIN"/>
+      </AppModuleConfig>
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="oal.oracle.apps.fnd.qrtz.model.OalQrtzModel" name="QuartzAMShared" ApplicationName="oal.oracle.apps.fnd.qrtz.model.service.QuartzAM">
+         <AM-Pooling jbo.ampool.dynamicjdbccredentials="false" jbo.ampool.isuseexclusive="false" jbo.ampool.maxpoolsize="1" jbo.ampool.resetnontransactionalstate="false"/>
+         <Security AppModuleJndiName="oal.oracle.apps.fnd.qrtz.model.service.QuartzAM"/>
+         <Custom JDBCDataSource="jdbc/OalappRuntimeFIN"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>
