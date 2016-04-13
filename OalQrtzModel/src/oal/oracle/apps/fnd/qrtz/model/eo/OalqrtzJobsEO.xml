@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OalqrtzJobsEO"
+  Version="11.1.1.67.75"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="OALAPP.OALQRTZ_JOBS"
+  AliasName="OalqrtzJobsEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="ApplicationId"
+    IsNotNull="true"
+    ColumnName="APPLICATION_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="OALAPP.OALQRTZ_JOBS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEO.ApplicationId_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="JobId"
+    ColumnName="JOB_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="OALAPP.OALQRTZ_JOBS"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="0"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="JobName"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="JOB_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OALAPP.OALQRTZ_JOBS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEO.JobName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="4000"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OALAPP.OALQRTZ_JOBS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2000"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Enabled"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="ENABLED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OALAPP.OALQRTZ_JOBS"
+    DefaultValue="Y">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="JobType"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="JOB_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OALAPP.OALQRTZ_JOBS"
+    DefaultValue="JAVA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEO.JobType_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="JobExecutable"
+    IsNotNull="true"
+    Precision="1000"
+    ColumnName="JOB_EXECUTABLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OALAPP.OALQRTZ_JOBS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEO.JobExecutable_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="JobExeOptions"
+    Precision="4000"
+    ColumnName="JOB_EXE_OPTIONS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OALAPP.OALQRTZ_JOBS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2000"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEO.JobExeOptions_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    IsNotNull="true"
+    ColumnName="CREATION_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="OALAPP.OALQRTZ_JOBS"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    Precision="64"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OALAPP.OALQRTZ_JOBS"
+    IsUpdateable="while_insert"
+    HistoryColumn="UserHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="64"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="OALAPP.OALQRTZ_JOBS"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    Precision="64"
+    ColumnName="LAST_UPDATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OALAPP.OALQRTZ_JOBS"
+    HistoryColumn="UserHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="64"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateLogin"
+    Precision="32"
+    ColumnName="LAST_UPDATE_LOGIN"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OALAPP.OALQRTZ_JOBS"
+    HistoryColumn="UserHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="32"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="OalqrtzJobParamsEO"
+    Association="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsToJobParamsAO"
+    AssociationEnd="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsToJobParamsAO.OalqrtzJobParamsEO"
+    AssociationOtherEnd="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsToJobParamsAO.OalqrtzJobsEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="OalqrtzJobAccessGrantsEO"
+    Association="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobToJobAccessAO"
+    AssociationEnd="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobToJobAccessAO.OalqrtzJobAccessGrantsEO"
+    AssociationOtherEnd="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobToJobAccessAO.OalqrtzJobsEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="OalqrtzJobsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="OALQRTZ_JOBS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEO.JobId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC00800297">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C00800297"/>
+      <Attr Name="_checkCondition" Value='"APPLICATION_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEO.ApplicationId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC00800298">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C00800298"/>
+      <Attr Name="_checkCondition" Value='"JOB_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC00800299">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C00800299"/>
+      <Attr Name="_checkCondition" Value='"JOB_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEO.JobName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC00800300">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C00800300"/>
+      <Attr Name="_checkCondition" Value='"ENABLED" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEO.Enabled"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC00800301">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C00800301"/>
+      <Attr Name="_checkCondition" Value='"JOB_TYPE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEO.JobType"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC00800302">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C00800302"/>
+      <Attr Name="_checkCondition" Value='"JOB_EXECUTABLE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEO.JobExecutable"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC00800303">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C00800303"/>
+      <Attr Name="_checkCondition" Value='"CREATION_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEO.CreationDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC00800304">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C00800304"/>
+      <Attr Name="_checkCondition" Value='"CREATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC00800305">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C00800305"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATE_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEO.LastUpdateDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC00800306">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C00800306"/>
+      <Attr Name="_checkCondition" Value='"LAST_UPDATED_BY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEO.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="OalqrtzJobsFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="OALFND_APPLICATIONS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="OALQRTZ_JOBS_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobsEO.ApplicationId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oal.oracle.apps.fnd.qrtz.model.OalQrtzModelBundle"/>
+  </ResourceBundle>
+</Entity>

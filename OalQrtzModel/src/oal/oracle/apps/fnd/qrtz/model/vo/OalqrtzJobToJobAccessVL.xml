@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OalqrtzJobToJobAccessVL"
+  Version="11.1.1.67.75"
+  InheritPersonalization="merge"
+  EntityAssociation="oal.oracle.apps.fnd.qrtz.model.eo.OalqrtzJobToJobAccessAO">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="OalqrtzJobsVO"
+    Cardinality="1"
+    Owner="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobsVO"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="OalqrtzJobsVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobsVO.JobId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="OalqrtzJobAccessGrantsVO"
+    Cardinality="-1"
+    Owner="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobAccessGrantsVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="OalqrtzJobAccessGrantsVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobAccessGrantsVO.JobId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

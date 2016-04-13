@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="QuartzAM"
+  Version="11.1.1.67.75"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true"
+  ComponentClass="oal.oracle.apps.fnd.qrtz.model.service.QuartzAMImpl"
+  ComponentInterface="oal.oracle.apps.fnd.qrtz.model.service.common.QuartzAM"
+  ClientProxyName="oal.oracle.apps.fnd.qrtz.model.service.client.QuartzAMClient">
+  <DesignTime>
+    <Attr Name="_deployType" Value="0"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewUsage
+    Name="ScheduledJobsVO1"
+    ViewObjectName="oal.oracle.apps.fnd.qrtz.model.vo.ScheduledJobsVO"/>
+  <ViewUsage
+    Name="OalfndApplicationsVO1"
+    ViewObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalfndApplicationsVO"/>
+  <ViewUsage
+    Name="OalqrtzJobsVO1"
+    ViewObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobsVO"/>
+  <ViewUsage
+    Name="OalqrtzJobAccessGrantsVO1"
+    ViewObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobAccessGrantsVO"/>
+  <ViewUsage
+    Name="OalqrtzJobParamsVO1"
+    ViewObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobParamsVO"/>
+  <ViewUsage
+    Name="OalfndLookupValuesVO1"
+    ViewObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalfndLookupValuesVO"/>
+  <ViewUsage
+    Name="OalqrtzJobsReadOnlyVO1"
+    ViewObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobsReadOnlyVO"/>
+  <ViewUsage
+    Name="OalqrtzJobParamsReadOnlyVO1"
+    ViewObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobParamsReadOnlyVO"/>
+  <ViewUsage
+    Name="JobsReadOnlyVOForJobName"
+    ViewObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobsReadOnlyVO">
+    <ViewCriteriaUsage
+      Name="JobsReadOnlyCriteriaForJobName"
+      FullName="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobsReadOnlyVO.JobsReadOnlyCriteriaForJobName"/>
+  </ViewUsage>
+  <ViewUsage
+    Name="OalqrtzJobRequestsVO1"
+    ViewObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobRequestsVO"/>
+  <ViewUsage
+    Name="OalfndLookupValuesForRoles"
+    ViewObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalfndLookupValuesVO">
+    <ViewCriteriaUsage
+      Name="LookupNameCriteria"
+      FullName="oal.oracle.apps.fnd.qrtz.model.vo.OalfndLookupValuesVO.LookupNameCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pLookupName">
+        <TransientExpression><![CDATA['OALQRTZ_ACCESS_ROLES']]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewUsage>
+  <ViewUsage
+    Name="JobRequestsVOForGTrigger"
+    ViewObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobRequestsVO"/>
+  <ViewLinkUsage
+    Name="OalqrtzJobToJobAccessVL1"
+    ViewLinkObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobToJobAccessVL"
+    SrcViewUsageName="oal.oracle.apps.fnd.qrtz.model.service.QuartzAM.OalqrtzJobsVO1"
+    DstViewUsageName="oal.oracle.apps.fnd.qrtz.model.service.QuartzAM.OalqrtzJobAccessGrantsVO1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OalqrtzJobToJobParamsVL1"
+    ViewLinkObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobToJobParamsVL"
+    SrcViewUsageName="oal.oracle.apps.fnd.qrtz.model.service.QuartzAM.OalqrtzJobsVO1"
+    DstViewUsageName="oal.oracle.apps.fnd.qrtz.model.service.QuartzAM.OalqrtzJobParamsVO1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OalqrtzJobToJobParamsReadOnlyVL1"
+    ViewLinkObjectName="oal.oracle.apps.fnd.qrtz.model.vo.OalqrtzJobToJobParamsReadOnlyVL"
+    SrcViewUsageName="oal.oracle.apps.fnd.qrtz.model.service.QuartzAM.OalqrtzJobsReadOnlyVO1"
+    DstViewUsageName="oal.oracle.apps.fnd.qrtz.model.service.QuartzAM.OalqrtzJobParamsReadOnlyVO1"
+    Reversed="false"/>
+  <ClientInterface>
+    <Method
+      Name="getScheduleNumber">
+      <Return
+        Type="oracle.jbo.domain.Number"/>
+    </Method>
+  </ClientInterface>
+</AppModule>
